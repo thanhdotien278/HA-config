@@ -1,0 +1,6 @@
+- platform: yweather
+  monitored_conditions:
+    - weather_current
+    - wind_speed
+    - humidity
+    - temperature

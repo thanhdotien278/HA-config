@@ -1,0 +1,95 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: MyHome
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude
+  longitude: !secret longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 0
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Asia/Tokyo
+  #customize:
+    #switch.light_sleep:
+      #custom_ui_state_card: state-card-my-custom-light
+
+
+# Enables the frontend
+frontend:
+  extra_html_url:
+    - /local/custom_ui/state-card-my-custom-light.html
+
+logbook:
+updater:
+
+# Show links to resources in log and frontend
+# introduction:
+
+panel_custom:
+  - name: react
+    sidebar_title: TodoMVC
+    sidebar_icon: mdi:dna
+    url_path: todomvc
+    config:
+      title: hello
+  - name: hello
+    sidebar_title: hello
+    sidebar_icon: mdi:email
+    url_path: hello
+    config:
+      title: hello
+
+# Enables configuration UI
+config:
+
+http:
+  # Secrets are defined in the file secrets.yaml
+  # api_password: !secret http_password
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  # base_url: example.duckdns.org:8123
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# System prediction
+sensor: !include_dir_merge_list sensors/
+
+# Sensor connect to Raspi
+binary_sensor: !include_dir_merge_list binary_sensors/
+
+# Switch relay connect to Raspi
+switch: !include_dir_merge_list switchs/
+
+# Text to speech
+tts:
+  - platform: google
+
+automation: !include_dir_merge_list automations/
+script: !include_dir_merge_list scripts/
+group: !include_dir_merge_named groups/
+#################################################################
+## Input_boolean
+#################################################################
+input_boolean:
+  people_in_toilet:
+    name: People in toilet
+    initial: off
+  people_in_barthroom:
+    name: People in barth room
+    initial: off
+  sleep_mode:
+    name: Sleep Mode
+    initial: off
+  information_messages:
+    name: Infomation messages
+    initial: off
+  people_in_front_door:
+    name: People in front door
+    initial: off

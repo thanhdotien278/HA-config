@@ -1,0 +1,23 @@
+# Log Severities: notset, debug, info, warn, warning, error, fatal, critical
+logger:
+  default: error
+  logs:
+    homeassistant.components.image_processing: critical
+    homeassistant.components.python_script: warning
+    homeassistant.components.camera.synology: critical
+    homeassistant.components.camera.generic: critical
+    homeassistant.components.sensor.wunderground: critical
+    homeassistant.components.sensor.pi_hole: critical
+    homeassistant.components.media_player.plex: critical
+    homeassistant.components.telegram_bot: critical
+    homeassistant.components.scene.lifx_cloud: critical
+    homeassistant.components.sensor.darksky: critical
+    pychromecast.socket_client: critical
+    aiohttp.access: critical
+    aiohttp.server: critical
+    haffmpeg.core: critical
+    pywemo.ouimeaux_device: critical
+    pywemo.ssdp: critical
+    homeassistant.helpers.entity: critical
+    custom_components.sensor.life360: critical
+    homeassistant.components.http.ban: warning

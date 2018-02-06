@@ -1,0 +1,8 @@
+# Turn off amply when late night
+- alias: 'Turn off amply when late night'
+  trigger:
+    platform: time
+    at: '2:00:00'
+  action:
+    service: switch.turn_off
+    entity_id: switch.amply

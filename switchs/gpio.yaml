@@ -1,0 +1,8 @@
+- platform: rpi_gpio
+  ports:
+    4: Toilet Light
+    22: Toilet Fan
+    18: Front Light
+    16: Barthroom Light
+    #23: Barthroom Fan
+  invert_logic: true

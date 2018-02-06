@@ -1,0 +1,73 @@
+# Turn off door light when pir sensor off
+- alias: 'Turn off door light when pir sensor off'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.main_door_pir
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 30
+  action:
+    service: switch.turn_off
+    entity_id: switch.front_light
+
+
+# Turn on door light when main door opened
+- alias: 'Turn on door light when main door opened'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.main_door
+    to: 'on'
+  action:
+    service: switch.turn_on
+    entity_id: switch.front_light
+
+
+# Alert when door open at midnight
+# - alias: 'Alert when door open at midnight'
+#   trigger:
+#     platform: state
+#     entity_id: binary_sensor.main_door
+#     to: 'on'
+#   condition: 
+#     - condition: time
+#       after: '1:00:00'
+#     - condition: state
+#       entity_id: input_boolean.people_in_front_door
+#       to: 'off'
+#   action:
+#     - service: switch.turn_on
+#       entity_id: switch.main_light
+
+
+# Turn on door light when pir sensor on
+- alias: 'Turn on door light when door pir sensor detected'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.main_door_pir
+    from: 'off'
+    to: 'on'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.door_light
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.people_in_front_door
+
+
+# Turn off door light when pir sensor off
+- alias: 'Turn off door light when pir sensor off'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.main_door_pir
+    from: 'on'
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 30
+  action:
+    - service: switch.turn_on
+      entity_id: switch.door_light
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.people_in_front_door

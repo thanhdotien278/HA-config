@@ -1,0 +1,12 @@
+doors:
+  name: Doors
+  view: yes
+  entities:
+    - binary_sensor.toilet_door
+# default_view:
+#     view: yes
+#     icon: mdi:home
+#     name: Home
+#     entities:
+#       - switch.aircon_off
+#       - switch.aircon_heat

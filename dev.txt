@@ -1,0 +1,127 @@
+automation.turn_off_amply_when_late_night	off	last_triggered: null
+friendly_name: Turn off amply when late night
+automation.turn_off_door_light_when_pir_sensor_off	on	last_triggered: 2018-01-22T16:13:27.011799+00:00
+friendly_name: Turn off door light when pir sensor off
+automation.turn_off_toilet_light_when_door_close	on	last_triggered: 2018-01-22T23:20:26.588978+00:00
+friendly_name: Turn off toilet light when door close
+automation.turn_on_door_light_when_main_door_opened	on	last_triggered: null
+friendly_name: Turn on door light when main door opened
+automation.turn_on_light_when_805	on	last_triggered: 2018-01-22T23:05:01.685543+00:00
+friendly_name: Turn on light when 8:05
+automation.turn_on_toilet_light_when_door_opend	on	last_triggered: 2018-01-22T23:19:22.541395+00:00
+friendly_name: Turn on toilet light when door opend
+binary_sensor.barthroom_door	off	friendly_name: Barthroom Door
+binary_sensor.barthroom_pir	on	friendly_name: Barthroom PIR
+binary_sensor.main_door	off	friendly_name: Main Door
+binary_sensor.main_door_pir	on	friendly_name: Main Door PIR
+binary_sensor.toilet_door	off	friendly_name: Toilet Door
+binary_sensor.toilet_pir	off	friendly_name: Toilet PIR
+group.all_automations	on	entity_id: automation.turn_off_amply_when_late_night,automation.turn_off_door_light_when_pir_sensor_off,automation.turn_off_toilet_light_when_door_close,automation.turn_on_door_light_when_main_door_opened,automation.turn_on_light_when_805,automation.turn_on_toilet_light_when_door_opend
+order: 2
+auto: true
+friendly_name: all automations
+hidden: true
+assumed_state: false
+group.all_remotes	off	entity_id: remote.apple_tv
+order: 2
+auto: true
+friendly_name: all remotes
+hidden: true
+assumed_state: false
+group.all_switches	on	entity_id: switch.aircon_cool,switch.aircon_dry,switch.aircon_fan_0,switch.aircon_fan_1,switch.aircon_fan_2,switch.aircon_fan_3,switch.aircon_fan_4,switch.aircon_heat,switch.aircon_swing_1,switch.aircon_swing_2,switch.aircon_swing_3,switch.aircon_swing_4,switch.aircon_swing_5,switch.aircon_swing_auto,switch.aircon_temp_18,switch.aircon_temp_19,switch.aircon_temp_20,switch.aircon_temp_21,switch.aircon_temp_22,switch.aircon_temp_23,switch.aircon_temp_24,switch.aircon_temp_25,switch.aircon_temp_26,switch.aircon_temp_27,switch.aircon_temp_28,switch.aircon_temp_29,switch.aircon_temp_30,switch.aircon_temp_31,switch.aircon_temp_32,switch.aircon_off,switch.amply,switch.amply_input_mode,switch.amply_volume,switch.barthroom_light,switch.door_light,switch.light,switch.light_brightness,switch.light_sleep,switch.toilet_fan,switch.toilet_light
+order: 1
+auto: true
+friendly_name: all switches
+hidden: true
+assumed_state: true
+media_player.apple_tv	off	friendly_name: Apple TV
+supported_features: 21427
+remote.apple_tv	off	friendly_name: Apple TV
+sensor.cpu_used	2	unit_of_measurement: %
+friendly_name: CPU used
+icon: mdi:memory
+sensor.ram_available	764.7	unit_of_measurement: MiB
+friendly_name: RAM available
+icon: mdi:memory
+sun.sun	above_horizon	next_dawn: 2018-01-23T21:53:06+00:00
+next_dusk: 2018-01-23T09:06:33+00:00
+next_midnight: 2018-01-23T15:30:20+00:00
+next_noon: 2018-01-23T03:30:02+00:00
+next_rising: 2018-01-23T22:19:41+00:00
+next_setting: 2018-01-23T08:39:56+00:00
+elevation: 11.39
+azimuth: 122.49
+friendly_name: Sun
+switch.aircon_cool	off	friendly_name: Aircon Cool assumed_state: true
+switch.aircon_dry	off	friendly_name: Aircon Dry assumed_state: true
+switch.aircon_fan_0	off	friendly_name: Aircon Fan 0 assumed_state: true
+switch.aircon_fan_1	off	friendly_name: Aircon Fan 1
+assumed_state: true
+switch.aircon_fan_2	off	friendly_name: Aircon Fan 2
+assumed_state: true
+switch.aircon_fan_3	off	friendly_name: Aircon Fan 3
+assumed_state: true
+switch.aircon_fan_4	off	friendly_name: Aircon Fan 4
+assumed_state: true
+switch.aircon_heat	off	friendly_name: Aircon Heat
+assumed_state: true
+switch.aircon_off	off	friendly_name: Aircon off
+assumed_state: true
+switch.aircon_swing_1	off	friendly_name: Aircon Swing 1
+assumed_state: true
+switch.aircon_swing_2	off	friendly_name: Aircon Swing 2
+assumed_state: true
+switch.aircon_swing_3	off	friendly_name: Aircon Swing 3
+assumed_state: true
+switch.aircon_swing_4	off	friendly_name: Aircon Swing 4
+assumed_state: true
+switch.aircon_swing_5	off	friendly_name: Aircon Swing 5
+assumed_state: true
+switch.aircon_swing_auto	off	friendly_name: Aircon Swing Auto
+assumed_state: true
+switch.aircon_temp_18	off	friendly_name: Aircon Temp 18
+assumed_state: true
+switch.aircon_temp_19	off	friendly_name: Aircon Temp 19
+assumed_state: true
+switch.aircon_temp_20	off	friendly_name: Aircon Temp 20
+assumed_state: true
+switch.aircon_temp_21	off	friendly_name: Aircon Temp 21
+assumed_state: true
+switch.aircon_temp_22	off	friendly_name: Aircon Temp 22
+assumed_state: true
+switch.aircon_temp_23	off	friendly_name: Aircon Temp 23
+assumed_state: true
+switch.aircon_temp_24	off	friendly_name: Aircon Temp 24
+assumed_state: true
+switch.aircon_temp_25	off	friendly_name: Aircon Temp 25
+assumed_state: true
+switch.aircon_temp_26	on	friendly_name: Aircon Temp 26
+assumed_state: true
+switch.aircon_temp_27	off	friendly_name: Aircon Temp 27
+assumed_state: true
+switch.aircon_temp_28	off	friendly_name: Aircon Temp 28
+assumed_state: true
+switch.aircon_temp_29	off	friendly_name: Aircon Temp 29
+assumed_state: true
+switch.aircon_temp_30	off	friendly_name: Aircon Temp 30
+assumed_state: true
+switch.aircon_temp_31	off	friendly_name: Aircon Temp 31
+assumed_state: true
+switch.aircon_temp_32	off	friendly_name: Aircon Temp 32
+assumed_state: true
+switch.amply	off	friendly_name: Amply
+assumed_state: true
+switch.amply_input_mode	off	friendly_name: Amply Input Mode
+assumed_state: true
+switch.amply_volume	on	friendly_name: Amply Volume
+assumed_state: true
+switch.barthroom_light	off	friendly_name: Barthroom Light
+switch.door_light	off	friendly_name: Door Light
+switch.light	on	friendly_name: Light
+assumed_state: true
+switch.light_brightness	on	friendly_name: Light Brightness
+assumed_state: true
+switch.light_sleep	on	friendly_name: Light Sleep
+assumed_state: true
+switch.toilet_fan	off	friendly_name: Toilet Fan
+switch.toilet_light	off	friendly_name: Toilet Light

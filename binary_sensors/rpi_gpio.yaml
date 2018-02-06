@@ -1,0 +1,8 @@
+- platform: rpi_gpio
+  ports:
+    17: Toilet PIR
+    27: Toilet Door
+    25: Barthroom PIR
+    12: Barthroom Door
+    24: Main Door PIR
+    26: Main Door

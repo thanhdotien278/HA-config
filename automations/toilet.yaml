@@ -1,0 +1,47 @@
+# Door open event
+- alias: 'Turn on toilet light when door opened'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.toilet_door
+    to: 'on'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.toilet_light
+
+# Door close event
+- alias: 'Turn off toilet light when door closed'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.toilet_door
+    to: 'off'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.people_in_toilet
+    - delay: '00:00:15'
+    - condition: and
+      conditions:
+      - condition: state
+        entity_id: input_boolean.people_in_toilet
+        state: 'off'
+    - service: switch.turn_off
+      entity_id: switch.toilet_light
+    - delay: '00:01:30'
+    - service: switch.turn_off
+      entity_id: switch.toilet_fan
+ 
+
+# Track people in toilet (when door closed and pir detected)
+- alias: 'Track people in toilet'
+  trigger: # when pir detected
+    platform: state
+    entity_id: binary_sensor.toilet_pir
+    to: 'on'
+  condition: # and if door close
+    condition: state
+    entity_id: binary_sensor.toilet_door
+    state: 'off'
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.people_in_toilet
+    - service: switch.turn_on
+      entity_id: switch.toilet_fan

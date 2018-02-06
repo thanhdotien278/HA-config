@@ -1,0 +1,46 @@
+<dom-module id='ha-panel-hello'>
+	<template>
+		<style>
+			p {
+				font-weight: bold;
+			}
+		</style>
+		<p>Hello {{who}}. Greetings from Home Assistant.</p>
+	</template>
+</dom-module>
+
+<script>
+	class HaPanelHello extends Polymer.Element {
+		static get is() {
+			return 'ha-panel-hello';
+		}
+		static get properties() {
+			return {
+				// Home Assistant object
+				hass: Object,
+				// If should render in narrow mode
+				narrow: {
+					type: Boolean,
+				},
+				// If sidebar is currently shown
+				showMenu: {
+					type: Boolean,
+				},
+				// Home Assistant panel info
+				// panel.config contains config passed to register_panel serverside
+				panel: {
+					type: Object,
+				},
+				who: {
+					type: String,
+					computed: 'computeWho(panel)',
+				},
+			};
+		}
+
+		computeWho(panel) {
+			return panel && panel.config && panel.config.title ? panel.config.title : 'World';
+		}
+	}
+	customElements.define(HaPanelHello.is, HaPanelHello);
+</script>
